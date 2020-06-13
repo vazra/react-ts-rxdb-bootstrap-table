@@ -1,7 +1,7 @@
 import { createRxDatabase, RxDatabase, addRxPlugin } from "rxdb";
 import React, { useMemo } from "react";
 import faker from "faker";
-import { get, HeroDocType } from "./db";
+import { get, HeroDocType, MyDatabaseCollections } from "./db";
 
 const userSchema = {
   title: "User schema",
@@ -52,11 +52,11 @@ export const createAUser = (): HeroDocType => {
 };
 
 export const addUserstoDB = async (
+  db: RxDatabase<MyDatabaseCollections> | undefined,
   total: number,
   setProgress: React.Dispatch<React.SetStateAction<number>>,
   chunk: number = 100
 ) => {
-  const db = await get();
   const t0 = performance.now();
   const timeTaken = [];
   const totalPass = Math.floor(total / chunk);
@@ -69,16 +69,16 @@ export const addUserstoDB = async (
       userArry.push(createAUser());
     }
     const ta0 = performance.now();
-    const result = await db.heroes.bulkInsert(userArry);
+    const result = await db?.heroes.bulkInsert(userArry);
     const ta1 = performance.now();
     timeTaken.push(ta1 - ta0);
     console.log(
-      `inserted ${result.success.length} docs & dailed ${result.error.length} docs`
+      `inserted ${result?.success.length} docs & dailed ${result?.error.length} docs`
     );
   }
   const t1 = performance.now();
   console.log(
-    `${db.adapter}: Time Taken to add ${total} users : ${(t1 - t0).toFixed(
+    `${db?.adapter}: Time Taken to add ${total} users : ${(t1 - t0).toFixed(
       1
     )}ms`
   );

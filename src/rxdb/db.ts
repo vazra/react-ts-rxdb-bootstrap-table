@@ -12,7 +12,8 @@ import { timeStart, timeEnd } from "./helper";
 
 // eslint-disable-next-line import/no-unresolved
 addRxPlugin(require("pouchdb-adapter-memory"));
-// addRxPlugin(require("pouchdb-adapter-idb"));
+addRxPlugin(require("pouchdb-adapter-idb"));
+addRxPlugin(require("pouchdb-adapter-websql"));
 
 export type HeroDocType = {
   name: string;
@@ -169,14 +170,13 @@ const collections = [
 // console.log(`host: ${syncURL}`);
 
 let dbPromise: Promise<RxDatabase<MyDatabaseCollections>>;
-
-const createDB = async () => {
+export type IAdapter = "idb" | "memory" | "websql" | "leveldb";
+const createDB = async (adapter: IAdapter) => {
   console.log("DatabaseService: creating database..");
   const db: MyDatabase = await createRxDatabase<MyDatabaseCollections>({
-    name: "heroesreactdb", // <- name
-    adapter: "memory", // <- storage-adapter
-    // adapter: "idb", // <- storage-adapter
-    password: "myLongAndStupidPassword", // <- password (optional)
+    name: "testdb", // <- name
+    adapter: adapter, // <- storage-adapter
+    password: "passpasspass", // <- password (optional)
     multiInstance: false, // This should be set to false when you have single-instances like a single-window electron-app
     eventReduce: true, // <- eventReduce (optional, default: true)
   });
@@ -185,32 +185,22 @@ const createDB = async () => {
   console.log("DatabaseService: created database");
   // window.db = db; // write to window for debugging
 
-  // show leadership in title
-  db.waitForLeadership()
-    .then(() => {
-      console.log("isLeader now");
-      document.title = `♛ ${document.title}`;
-    })
-    .catch(() => {
-      console.log("Faild to become leader");
-    });
-
   // create collections
-  console.log("DatabaseService: create collections");
+  // console.log("DatabaseService: create collections");
   await Promise.all(collections.map((colData) => db.collection(colData)));
 
   // hooks
-  console.log("DatabaseService: add hooks");
-  db.heroes.postInsert(
-    function myPostInsertHook(
-      this: HeroCollection, // own collection is bound to the scope
-      _docData: HeroDocType, // documents data
-      doc: HeroDocument // RxDocument
-    ) {
-      console.log(`insert to ${this.name}-collection: ${doc.name}`);
-    },
-    false // not async
-  );
+  // console.log("DatabaseService: add hooks");
+  // db.heroes.postInsert(
+  //   function myPostInsertHook(
+  //     this: HeroCollection, // own collection is bound to the scope
+  //     _docData: HeroDocType, // documents data
+  //     doc: HeroDocument // RxDocument
+  //   ) {
+  //     console.log(`insert to ${this.name}-collection: ${doc.name}`);
+  //   },
+  //   false // not async
+  // );
 
   // TODO   : A function to input collectionId, and sync it with firestore db
   // db.$.subscribe((changeEvent) => console.dir(changeEvent));
@@ -218,8 +208,24 @@ const createDB = async () => {
   return db;
 };
 
-const get = () => {
-  if (!dbPromise) dbPromise = createDB();
+const deleteDB = async () => {
+  if (!dbPromise) return false;
+  const db = await dbPromise;
+  await db.destroy();
+  await db.remove();
+  return true;
+};
+
+const get = async (adpater: IAdapter) => {
+  if (!dbPromise) dbPromise = createDB(adpater);
+  const db = await dbPromise;
+  if (db.adapter !== adpater) {
+    console.warn(
+      `The current adapter is '${db.adapter}', re-creating with '${adpater}'`
+    );
+    await deleteDB();
+    dbPromise = createDB(adpater);
+  }
   return dbPromise;
 };
 

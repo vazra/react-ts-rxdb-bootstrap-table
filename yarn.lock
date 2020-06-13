@@ -1716,12 +1716,19 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
 
-"@types/react-bootstrap-table-next@^4.0.4":
+"@types/react-bootstrap-table-next@*", "@types/react-bootstrap-table-next@^4.0.4":
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/@types/react-bootstrap-table-next/-/react-bootstrap-table-next-4.0.4.tgz#fd44f084d8ffab37ce313d7ef6c0ead27527badd"
   integrity sha512-kEkhaq9gzpTzmv7jdZtIjc6tirpcr5jHjaUSHKjTHvPyuoL3OrTM10IF5BVajmrGz9DwSEk2C5spEeQ6Lc0tbw==
   dependencies:
     "@types/react" "*"
+
+"@types/react-bootstrap-table2-paginator@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@types/react-bootstrap-table2-paginator/-/react-bootstrap-table2-paginator-2.1.1.tgz#43e625c3b11f06403b23eeb6b5d7661a4bc52623"
+  integrity sha512-Ho0lwDKguwHEme97oHgVQRI8t//4JfCRqnIzlLPuM+aU5LfGI8niXxuBmUPyXqdSXitZ1C9ANQAMGqqBmuW0NQ==
+  dependencies:
+    "@types/react-bootstrap-table-next" "*"
 
 "@types/react-dom@*", "@types/react-dom@^16.9.0":
   version "16.9.8"
@@ -9241,6 +9248,18 @@ pouchdb-adapter-memory@^7.2.1:
     pouchdb-adapter-leveldb-core "7.2.1"
     pouchdb-utils "7.2.1"
 
+pouchdb-adapter-utils@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/pouchdb-adapter-utils/-/pouchdb-adapter-utils-7.0.0.tgz#1ac8d34481911e0e9a9bf51024610a2e7351dc80"
+  integrity sha512-UWKPC6jkz6mHUzZefrU7P5X8ZGvBC8LSNZ7BIp0hWvJE6c20cnpDwedTVDpZORcCbVJpDmFOHBYnOqEIblPtbA==
+  dependencies:
+    pouchdb-binary-utils "7.0.0"
+    pouchdb-collections "7.0.0"
+    pouchdb-errors "7.0.0"
+    pouchdb-md5 "7.0.0"
+    pouchdb-merge "7.0.0"
+    pouchdb-utils "7.0.0"
+
 pouchdb-adapter-utils@7.2.1:
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/pouchdb-adapter-utils/-/pouchdb-adapter-utils-7.2.1.tgz#d2583bc5c6bfcd6cf0d20acd54cb51683a196d37"
@@ -9252,6 +9271,27 @@ pouchdb-adapter-utils@7.2.1:
     pouchdb-md5 "7.2.1"
     pouchdb-merge "7.2.1"
     pouchdb-utils "7.2.1"
+
+pouchdb-adapter-websql-core@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/pouchdb-adapter-websql-core/-/pouchdb-adapter-websql-core-7.0.0.tgz#27b3e404159538e515b2567baa7869f90caac16c"
+  integrity sha512-NyMaH0bl20SdJdOCzd+fwXo8JZ15a48/MAwMcIbXzsRHE4DjFNlRcWAcjUP6uN4Ezc+Gx+r2tkBBMf71mIz1Aw==
+  dependencies:
+    pouchdb-adapter-utils "7.0.0"
+    pouchdb-binary-utils "7.0.0"
+    pouchdb-collections "7.0.0"
+    pouchdb-errors "7.0.0"
+    pouchdb-json "7.0.0"
+    pouchdb-merge "7.0.0"
+    pouchdb-utils "7.0.0"
+
+pouchdb-adapter-websql@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/pouchdb-adapter-websql/-/pouchdb-adapter-websql-7.0.0.tgz#44913d80ac8f38e84f0edd0c7e21970248ba69cb"
+  integrity sha512-VyzK0P/LLsePlUb8ZX7dX7ht0YFSyWiFBnHMZAFXkZJxyf+0d0hlealNrGQ59uZYRnAwYAuN4vRPwdowrufRUQ==
+  dependencies:
+    pouchdb-adapter-websql-core "7.0.0"
+    pouchdb-utils "7.0.0"
 
 pouchdb-all-dbs@1.0.2:
   version "1.0.2"
@@ -9381,6 +9421,13 @@ pouchdb-generate-replication-id@7.2.1:
     pouchdb-collate "7.2.1"
     pouchdb-md5 "7.2.1"
 
+pouchdb-json@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/pouchdb-json/-/pouchdb-json-7.0.0.tgz#d9860f66f27a359ac6e4b24da4f89b6909f37530"
+  integrity sha512-w0bNRu/7VmmCrFWMYAm62n30wvJJUT2SokyzeTyj3hRohj4GFwTRg1mSZ+iAmxgRKOFE8nzZstLG/WAB4Ymjew==
+  dependencies:
+    vuvuzela "1.0.3"
+
 pouchdb-json@7.2.1:
   version "7.2.1"
   resolved "https://registry.yarnpkg.com/pouchdb-json/-/pouchdb-json-7.2.1.tgz#41836bdffed1d1b6207793f0b26bf771105c0c61"
@@ -9413,6 +9460,11 @@ pouchdb-md5@7.2.1:
   dependencies:
     pouchdb-binary-utils "7.2.1"
     spark-md5 "3.0.0"
+
+pouchdb-merge@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/pouchdb-merge/-/pouchdb-merge-7.0.0.tgz#9f476ce7e32aae56904ad770ae8a1dfe14b57547"
+  integrity sha512-tci5u6NpznQhGcPv4ho1h0miky9rs+ds/T9zQ9meQeDZbUojXNaX1Jxsb0uYEQQ+HMqdcQs3Akdl0/u0mgwPGg==
 
 pouchdb-merge@7.2.1:
   version "7.2.1"
@@ -9751,6 +9803,11 @@ react-bootstrap-table-next@^4.0.3:
     classnames "^2.2.5"
     react-transition-group "^4.2.0"
     underscore "1.9.1"
+
+react-bootstrap-table2-paginator@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-table2-paginator/-/react-bootstrap-table2-paginator-2.1.2.tgz#a62151909e594719db568cede6e5d2962cbf8ddb"
+  integrity sha512-LC5znEphhgKJvaSY1q8d+Gj0Nc/1X+VS3tKJjkmWmfv9P61YC/BnwJ+aoqEmQzsLiVGowrzss+i/u+Tip5H+Iw==
 
 react-bootstrap@^1.0.1:
   version "1.0.1"
@@ -11530,10 +11587,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.9.5:
-  version "3.9.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.5.tgz#586f0dba300cde8be52dd1ac4f7e1009c1b13f36"
-  integrity sha512-hSAifV3k+i6lEoCJ2k6R2Z/rp/H3+8sdmcn5NrS3/3kE7+RyZXm9aqvxWqjEXHAd8b0pShatpcdMTvEdvAJltQ==
+typescript@3.8.3:
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
+  integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
 
 uncontrollable@^7.0.0:
   version "7.1.1"
