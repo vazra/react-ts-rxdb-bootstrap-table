@@ -1,7 +1,8 @@
 {
-  "name": "my-typescript-app",
+  "name": "example-react-ts-rxdb-bootstrap-table2",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://vazra.github.io/example-react-ts-rxdb-bootstrap-table2/",
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
