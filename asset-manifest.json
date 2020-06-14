@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/example-react-ts-rxdb-bootstrap-table2/static/css/main.5f361e03.chunk.css",
-    "main.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.5daab1b8.chunk.js",
-    "main.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.5daab1b8.chunk.js.map",
+    "main.css": "/example-react-ts-rxdb-bootstrap-table2/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.19f59839.chunk.js",
+    "main.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.19f59839.chunk.js.map",
     "runtime-main.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/runtime-main.347e5de7.js",
     "runtime-main.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/runtime-main.347e5de7.js.map",
     "static/css/2.7ef9b196.chunk.css": "/example-react-ts-rxdb-bootstrap-table2/static/css/2.7ef9b196.chunk.css",
-    "static/js/2.9962146d.chunk.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.9962146d.chunk.js",
-    "static/js/2.9962146d.chunk.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.9962146d.chunk.js.map",
+    "static/js/2.46b7cc8d.chunk.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.46b7cc8d.chunk.js",
+    "static/js/2.46b7cc8d.chunk.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.46b7cc8d.chunk.js.map",
     "index.html": "/example-react-ts-rxdb-bootstrap-table2/index.html",
-    "precache-manifest.93a16be7d134d295e222731c8baf27a6.js": "/example-react-ts-rxdb-bootstrap-table2/precache-manifest.93a16be7d134d295e222731c8baf27a6.js",
+    "precache-manifest.0ef0ac982a6068b29d952a85ec6d6754.js": "/example-react-ts-rxdb-bootstrap-table2/precache-manifest.0ef0ac982a6068b29d952a85ec6d6754.js",
     "service-worker.js": "/example-react-ts-rxdb-bootstrap-table2/service-worker.js",
     "static/css/2.7ef9b196.chunk.css.map": "/example-react-ts-rxdb-bootstrap-table2/static/css/2.7ef9b196.chunk.css.map",
-    "static/css/main.5f361e03.chunk.css.map": "/example-react-ts-rxdb-bootstrap-table2/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.9962146d.chunk.js.LICENSE.txt": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.9962146d.chunk.js.LICENSE.txt"
+    "static/css/main.5ecd60fb.chunk.css.map": "/example-react-ts-rxdb-bootstrap-table2/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.46b7cc8d.chunk.js.LICENSE.txt": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.46b7cc8d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.347e5de7.js",
     "static/css/2.7ef9b196.chunk.css",
-    "static/js/2.9962146d.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.5daab1b8.chunk.js"
+    "static/js/2.46b7cc8d.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.19f59839.chunk.js"
   ]
 }
