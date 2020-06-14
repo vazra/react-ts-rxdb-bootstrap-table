@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/example-react-ts-rxdb-bootstrap-table2/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.19f59839.chunk.js",
-    "main.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.19f59839.chunk.js.map",
+    "main.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.4024c730.chunk.js",
+    "main.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/main.4024c730.chunk.js.map",
     "runtime-main.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/runtime-main.347e5de7.js",
     "runtime-main.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/runtime-main.347e5de7.js.map",
     "static/css/2.7ef9b196.chunk.css": "/example-react-ts-rxdb-bootstrap-table2/static/css/2.7ef9b196.chunk.css",
-    "static/js/2.46b7cc8d.chunk.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.46b7cc8d.chunk.js",
-    "static/js/2.46b7cc8d.chunk.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.46b7cc8d.chunk.js.map",
+    "static/js/2.21da5660.chunk.js": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.21da5660.chunk.js",
+    "static/js/2.21da5660.chunk.js.map": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.21da5660.chunk.js.map",
     "index.html": "/example-react-ts-rxdb-bootstrap-table2/index.html",
-    "precache-manifest.0ef0ac982a6068b29d952a85ec6d6754.js": "/example-react-ts-rxdb-bootstrap-table2/precache-manifest.0ef0ac982a6068b29d952a85ec6d6754.js",
+    "precache-manifest.610fc8fc682d7fa389de2b2bdd68b11a.js": "/example-react-ts-rxdb-bootstrap-table2/precache-manifest.610fc8fc682d7fa389de2b2bdd68b11a.js",
     "service-worker.js": "/example-react-ts-rxdb-bootstrap-table2/service-worker.js",
     "static/css/2.7ef9b196.chunk.css.map": "/example-react-ts-rxdb-bootstrap-table2/static/css/2.7ef9b196.chunk.css.map",
     "static/css/main.5ecd60fb.chunk.css.map": "/example-react-ts-rxdb-bootstrap-table2/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.46b7cc8d.chunk.js.LICENSE.txt": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.46b7cc8d.chunk.js.LICENSE.txt"
+    "static/js/2.21da5660.chunk.js.LICENSE.txt": "/example-react-ts-rxdb-bootstrap-table2/static/js/2.21da5660.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.347e5de7.js",
     "static/css/2.7ef9b196.chunk.css",
-    "static/js/2.46b7cc8d.chunk.js",
+    "static/js/2.21da5660.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.19f59839.chunk.js"
+    "static/js/main.4024c730.chunk.js"
   ]
 }
