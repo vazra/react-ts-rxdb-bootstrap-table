@@ -66,11 +66,11 @@ export function RemoteTable({
                 <BootstrapTable
                   remote
                   bootstrap4
+                  {...paginationTableProps}
                   keyField="phone"
                   data={data}
                   columns={columns}
                   onTableChange={onTableChange}
-                  {...paginationTableProps}
                 />
               </Col>
             </Row>

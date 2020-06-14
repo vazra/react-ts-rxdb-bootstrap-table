@@ -2,65 +2,63 @@
 import {
   createRxDatabase,
   addRxPlugin,
-  RxDocument,
-  RxCollection,
   RxDatabase,
   RxJsonSchema,
+  checkAdapter,
 } from "rxdb";
-import { checkDB } from "./test";
-import { timeStart, timeEnd } from "./helper";
+import { timeStart, timeEnd } from "../utils/helper";
+import {
+  UserCollection,
+  UserDocType,
+  UserCollectionMethods,
+  MyDatabaseCollections,
+  MyDatabase,
+  IAdapter,
+} from "../types";
 
-// eslint-disable-next-line import/no-unresolved
+import { RxDBAdapterCheckPlugin } from "rxdb/plugins/adapter-check";
+import { RxDBEncryptionPlugin } from "rxdb/plugins/encryption";
+import { RxDBQueryBuilderPlugin } from "rxdb/plugins/query-builder";
+import { RxDBValidatePlugin } from "rxdb/plugins/validate";
+
+let dbPromise: Promise<RxDatabase<MyDatabaseCollections>>;
+const supportedAdapters: IAdapter[] = [];
+
+addRxPlugin(RxDBAdapterCheckPlugin);
+addRxPlugin(RxDBEncryptionPlugin);
+addRxPlugin(RxDBQueryBuilderPlugin);
+addRxPlugin(RxDBValidatePlugin);
+
 addRxPlugin(require("pouchdb-adapter-memory"));
 addRxPlugin(require("pouchdb-adapter-idb"));
 addRxPlugin(require("pouchdb-adapter-websql"));
+// addRxPlugin(require("pouchdb-adapter-leveldb"));
 
-export type HeroDocType = {
-  name: string;
-  phone: string;
-  address: string;
-  area?: string; // optional
+const _checkAdapter = () => {
+  checkAdapter("localstorage").then((val) => {
+    console.log("RXJS -> Adapter -> localstorage status :", val);
+    if (val && supportedAdapters.indexOf("localstorage") === -1)
+      supportedAdapters.push("localstorage");
+  });
+  checkAdapter("idb").then((val) => {
+    console.log("RXJS -> Adapter -> idb status :", val);
+    if (val && supportedAdapters.indexOf("idb") === -1)
+      supportedAdapters.push("idb");
+  });
+  checkAdapter("memory").then((val) => {
+    console.log("RXJS -> Adapter -> memory status :", val);
+    if (val && supportedAdapters.indexOf("memory") === -1)
+      supportedAdapters.push("memory");
+  });
+  checkAdapter("leveldb").then((val) => {
+    console.log("RXJS -> Adapter -> leveldb status :", val);
+    if (val && supportedAdapters.indexOf("leveldb") === -1)
+      supportedAdapters.push("leveldb");
+  });
 };
+_checkAdapter();
 
-type HeroDocMethods = {
-  scream: (v: string) => string;
-};
-
-type HeroDocument = RxDocument<HeroDocType, HeroDocMethods>;
-
-// we declare one static ORM-method for the collection
-type HeroCollectionMethods = {
-  getCount: (this: HeroCollection) => Promise<number>;
-  getCountPouch: (this: HeroCollection) => Promise<number>;
-  getCountWithInfo: (this: HeroCollection) => Promise<number>;
-  addDocs: (this: HeroCollection, docs: HeroDocType[]) => void;
-  getDocs: (
-    this: HeroCollection,
-    count: number,
-    page?: number
-  ) => Promise<HeroDocType[]>;
-  getDocsPouch: (
-    this: HeroCollection,
-    count: number,
-    page: number
-  ) => Promise<HeroDocType[]>;
-};
-
-// and then merge all our types
-type HeroCollection = RxCollection<
-  HeroDocType,
-  HeroDocMethods,
-  HeroCollectionMethods
->;
-
-export type MyDatabaseCollections = {
-  heroes: HeroCollection;
-};
-checkDB();
-
-type MyDatabase = RxDatabase<MyDatabaseCollections>;
-
-const heroSchema: RxJsonSchema<HeroDocType> = {
+const userSchema: RxJsonSchema<UserDocType> = {
   title: "vendor schema",
   description: "describes a vendor",
   version: 0,
@@ -84,21 +82,15 @@ const heroSchema: RxJsonSchema<HeroDocType> = {
   required: ["name", "phone", "address"],
 };
 
-const heroDocMethods: HeroDocMethods = {
-  scream(this: HeroDocument, what: string) {
-    return `${this.name} screams: ${what.toUpperCase()}`;
-  },
-};
-
-const heroCollectionMethods: HeroCollectionMethods = {
-  async getCount(this: HeroCollection) {
+const userCollectionMethods: UserCollectionMethods = {
+  async getCount(this: UserCollection) {
     const t0 = timeStart();
     const allDocs = await this.find().exec();
     console.log("Total users Count: ", allDocs.length);
     timeEnd(t0, `getCount - ${allDocs.length}`);
     return allDocs.length;
   },
-  async getCountPouch(this: HeroCollection) {
+  async getCountPouch(this: UserCollection) {
     const t0 = timeStart();
 
     const entries = await this.pouch.allDocs().catch((err) => {
@@ -110,7 +102,7 @@ const heroCollectionMethods: HeroCollectionMethods = {
     return entries.rows.length;
   },
 
-  async getCountWithInfo(this: HeroCollection) {
+  async getCountWithInfo(this: UserCollection) {
     const t0 = timeStart();
     const info = await this.pouch.info();
     console.log("Total users Count: ", info.doc_count);
@@ -118,59 +110,56 @@ const heroCollectionMethods: HeroCollectionMethods = {
     return info.doc_count;
   },
 
-  async getDocs(this: HeroCollection, count: number, page: number = 0) {
+  async getDocs(
+    this: UserCollection,
+    count: number,
+    page: number = 1,
+    saveTimeTaken?: React.Dispatch<React.SetStateAction<[number, number]>>
+  ) {
     const t0 = timeStart();
 
     const allDocs = await this.find()
-      .skip(count * page)
+      .skip(count * (page - 1))
       .limit(count)
       .exec();
     console.log(
       `retrived ${allDocs.length} docs from users (skipped : ${page * count})`
     );
-    timeEnd(t0, `getDocs - ${allDocs.length} items`);
+    const timeTaken = timeEnd(t0, `getDocs - ${allDocs.length} items`);
+    saveTimeTaken && saveTimeTaken([timeTaken, allDocs.length]);
     return allDocs;
   },
 
-  async getDocsPouch(this: HeroCollection, count: number, page: number = 0) {
+  async getDocsPouch(this: UserCollection, count: number, page: number = 0) {
     const t0 = timeStart();
     const allDocs = await this.pouch.allDocs({ include_docs: true });
     timeEnd(t0, `getDocsPouch - ${allDocs.length} items`);
     return allDocs;
   },
 
-  async addDocs(this: HeroCollection, docs: HeroDocType[]) {
+  async addDocs(
+    this: UserCollection,
+    docs: UserDocType[],
+    saveTimeTaken?: React.Dispatch<React.SetStateAction<[number, number]>>
+  ) {
     const t0 = timeStart();
     const res = await this.bulkInsert(docs);
-    timeEnd(t0, `addDocs - ${docs.length} items`);
+    const timeTaken = timeEnd(t0, `addDocs - ${docs.length} items`);
+    saveTimeTaken && saveTimeTaken([timeTaken, docs.length]);
+
     return res;
   },
 };
 
 const collections = [
   {
-    name: "heroes",
-    schema: heroSchema,
-    methods: heroDocMethods,
-    statics: heroCollectionMethods,
+    name: "users",
+    schema: userSchema,
+    // methods: userDocMethods,
+    statics: userCollectionMethods,
   },
-  // {
-  //   name: 'heroes',
-  //   schema: heroSchema,
-  //   methods: {
-  //     hpPercent() {
-  //       return (this.hp / this.maxHP) * 100;
-  //     }
-  //   },
-  //   sync: true
-  // }
 ];
 
-// const syncURL = `http://${window.location.hostname}:10102/`;
-// console.log(`host: ${syncURL}`);
-
-let dbPromise: Promise<RxDatabase<MyDatabaseCollections>>;
-export type IAdapter = "idb" | "memory" | "websql" | "leveldb";
 const createDB = async (adapter: IAdapter) => {
   console.log("DatabaseService: creating database..");
   const db: MyDatabase = await createRxDatabase<MyDatabaseCollections>({
@@ -216,18 +205,17 @@ const deleteDB = async () => {
   return true;
 };
 
-const get = async (adpater: IAdapter) => {
+export const changeAdapter = async (adapter: IAdapter) => {
+  console.warn(`re-creating database with adapter '${adapter}'`);
+  await deleteDB();
+  dbPromise = createDB(adapter);
+  return dbPromise;
+};
+
+const getDB = async (adpater: IAdapter) => {
   if (!dbPromise) dbPromise = createDB(adpater);
-  const db = await dbPromise;
-  if (db.adapter !== adpater) {
-    console.warn(
-      `The current adapter is '${db.adapter}', re-creating with '${adpater}'`
-    );
-    await deleteDB();
-    dbPromise = createDB(adpater);
-  }
   return dbPromise;
 };
 
 // eslint-disable-next-line import/prefer-default-export
-export { get };
+export { getDB, supportedAdapters };
