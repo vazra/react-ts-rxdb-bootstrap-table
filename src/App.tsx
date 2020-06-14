@@ -1,9 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useEffect, useState } from "react";
 import { get, MyDatabaseCollections, HeroDocType, IAdapter } from "./rxdb/db";
-import { RxDatabase, RxDocument } from "rxdb";
-import { addUserstoDB, timeStart, timeEnd } from "./rxdb/helper";
+import { RxDatabase } from "rxdb";
+import { addUserstoDB } from "./rxdb/helper";
 import {
   Container,
   Jumbotron,
@@ -15,14 +13,10 @@ import {
   Card,
   ButtonGroup,
 } from "react-bootstrap";
-import BootstrapTable, {
+import {
   TableChangeType,
   TableChangeState,
 } from "react-bootstrap-table-next";
-import paginationFactory, {
-  PaginationProvider,
-  PaginationListStandalone,
-} from "react-bootstrap-table2-paginator";
 import RemoteTable from "./RemoteTable";
 
 // import {
@@ -46,6 +40,7 @@ function App() {
   const [sizePerPage, setSizePerPage] = useState<number>(10);
   const [page, setPage] = useState<number>(1);
   const [adapter, setAdapter] = useState<IAdapter>("memory");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [availabeAdapters, setAvailabeAdapters] = useState<IAdapter[]>([
     "idb",
     "memory",

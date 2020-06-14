@@ -1,23 +1,23 @@
-import { createRxDatabase, RxDatabase, addRxPlugin } from "rxdb";
-import React, { useMemo } from "react";
+import { RxDatabase } from "rxdb";
+import React from "react";
 import faker from "faker";
-import { get, HeroDocType, MyDatabaseCollections } from "./db";
+import { HeroDocType, MyDatabaseCollections } from "./db";
 
-const userSchema = {
-  title: "User schema",
-  version: 0,
-  description: "describes a simple hero",
-  type: "object",
-  properties: {
-    name: {
-      type: "string",
-      primary: true,
-    },
-    age: {
-      type: "number",
-    },
-  },
-};
+// const userSchema = {
+//   title: "User schema",
+//   version: 0,
+//   description: "describes a simple hero",
+//   type: "object",
+//   properties: {
+//     name: {
+//       type: "string",
+//       primary: true,
+//     },
+//     age: {
+//       type: "number",
+//     },
+//   },
+// };
 
 // export const createDB = async () => {
 //   // addRxPlugin(require("pouchdb-adapter-memory"));
