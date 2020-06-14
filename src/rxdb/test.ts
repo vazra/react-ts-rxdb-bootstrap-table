@@ -1,4 +1,11 @@
+import { RxDBAdapterCheckPlugin } from "rxdb/plugins/adapter-check";
+import { RxDBEncryptionPlugin } from "rxdb/plugins/encryption";
+import { RxDBQueryBuilderPlugin } from "rxdb/plugins/query-builder";
 import { checkAdapter, addRxPlugin } from "rxdb";
+
+addRxPlugin(RxDBAdapterCheckPlugin);
+addRxPlugin(RxDBEncryptionPlugin);
+addRxPlugin(RxDBQueryBuilderPlugin);
 
 addRxPlugin(require("pouchdb-adapter-idb"));
 addRxPlugin(require("pouchdb-adapter-memory"));
