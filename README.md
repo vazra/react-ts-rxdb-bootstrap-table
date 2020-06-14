@@ -1,3 +1,7 @@
+![Build](https://github.com/vazra/example-react-ts-rxdb-bootstrap-table2/workflows/Build/badge.svg)
+
+view live demo [here]()
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
