@@ -1,4 +1,4 @@
-# Typescript React RxDB BootstrapTable2 Example
+# Typescript React RxDB BootstrapTable2 Demo
 
 ![Build](https://github.com/vazra/example-react-ts-rxdb-bootstrap-table2/workflows/Build/badge.svg)
 
@@ -19,3 +19,5 @@ view live demo [here](https://vazra.github.io/example-react-ts-rxdb-bootstrap-ta
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 <hr/>
+
+A similar demo using react, electron and native databases is availabe at [vazra/electron-react-ts-rxdb-realm-sqlite](https://github.com/vazra/electron-react-ts-rxdb-realm-sqlite)
