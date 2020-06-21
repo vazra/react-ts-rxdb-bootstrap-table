@@ -1,7 +1,7 @@
 {
   "name": "example-react-ts-rxdb-bootstrap-table2",
   "version": "0.1.0",
-  "homepage": "https://vazra.github.io/example-react-ts-rxdb-bootstrap-table2/",
+  "homepage": "https://vazra.github.io/react-ts-rxdb-bootstrap-table/",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "5.10.1",
