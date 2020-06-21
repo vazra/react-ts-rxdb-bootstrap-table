@@ -6,7 +6,7 @@ A basic implemetionat of RxDB in React
 
 this example is created with an intention to tryout some features of RxDB and view realtime performance of the client side local database with RxDB.
 
-view live demo [here](https://vazra.github.io/example-react-ts-rxdb-bootstrap-table2/)
+view live demo [here](https://vazra.github.io/react-ts-rxdb-bootstrap-table/)
 
 ## Features
 
