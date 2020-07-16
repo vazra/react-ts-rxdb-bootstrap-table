@@ -27,7 +27,7 @@
     "react-scripts": "3.4.1",
     "rxdb": "9.3.0",
     "rxjs": "6.6.0",
-    "typescript": "3.9.6"
+    "typescript": "3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
