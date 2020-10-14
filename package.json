@@ -14,7 +14,7 @@
     "@types/react-bootstrap-table-next": "4.0.8",
     "@types/react-bootstrap-table2-paginator": "2.1.1",
     "@types/react-dom": "16.9.8",
-    "bootstrap": "4.5.2",
+    "bootstrap": "4.5.3",
     "faker": "5.1.0",
     "pouchdb-adapter-idb": "7.2.2",
     "pouchdb-adapter-memory": "7.2.2",
