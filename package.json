@@ -9,7 +9,7 @@
     "@testing-library/user-event": "13.4.1",
     "@types/faker": "5.5.9",
     "@types/jest": "27.0.2",
-    "@types/node": "16.11.0",
+    "@types/node": "16.11.1",
     "@types/react": "17.0.30",
     "@types/react-bootstrap-table-next": "4.0.16",
     "@types/react-bootstrap-table2-paginator": "2.1.2",
