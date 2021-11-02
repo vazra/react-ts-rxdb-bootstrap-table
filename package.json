@@ -4,7 +4,7 @@
   "homepage": "https://vazra.github.io/react-ts-rxdb-bootstrap-table/",
   "private": false,
   "dependencies": {
-    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "13.5.0",
     "@types/faker": "5.5.9",
