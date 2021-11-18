@@ -11807,10 +11807,10 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxdb@10.5.1:
-  version "10.5.1"
-  resolved "https://registry.yarnpkg.com/rxdb/-/rxdb-10.5.1.tgz#6253a105bcd5f5f4a8e3c3aadfb8b8def6930a43"
-  integrity sha512-F8OgiAvqiR41RrcKm72hctGuEBUI7aZyJzIEGKMcqrK0lStLc67vUe4o3BC71eMeQ8biSU3DiNNwvCPEP798UA==
+rxdb@10.5.2:
+  version "10.5.2"
+  resolved "https://registry.yarnpkg.com/rxdb/-/rxdb-10.5.2.tgz#c207531759c38359124056c2dd494aaf7961944f"
+  integrity sha512-09mLVWUpAMnw87/Jgp8/D+2ROIu8xXb6ZWnlMf53NZM7bfF5/k327M+jafONs1728Bscr7KH63qO7ar94Kai/A==
   dependencies:
     "@babel/runtime" "7.15.4"
     "@types/clone" "2.1.1"
