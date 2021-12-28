@@ -26,7 +26,7 @@
     "react-dom": "16.14.0",
     "react-scripts": "5.0.0",
     "rxdb": "10.5.4",
-    "rxjs": "7.4.0",
+    "rxjs": "7.5.1",
     "typescript": "4.5.4"
   },
   "scripts": {
