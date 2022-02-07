@@ -9848,10 +9848,10 @@ run-parallel@^1.1.9:
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.1.9.tgz#c9dd3a7cf9f4b2c4b6244e173a6ed866e61dd679"
   integrity sha512-DEqnSRTDw/Tc3FXf49zedI638Z9onwUotBMiUFKmrO2sdFKIbXamXGQ3Axd4qgphxKB4kw/qP1w5kTxnfU1B9Q==
 
-rxdb@11.5.1:
-  version "11.5.1"
-  resolved "https://registry.yarnpkg.com/rxdb/-/rxdb-11.5.1.tgz#bee0bc3652baef4e25769484e5c15c72ba5e3e63"
-  integrity sha512-CBe4FMh042lpfeh/1RJrHBL+QYck4vpaxF0d54kdrSe/4hs6Q/5eNTTQFpksW+c4zeeDcuXK7h72jrX+ln+Ubw==
+rxdb@11.6.0:
+  version "11.6.0"
+  resolved "https://registry.yarnpkg.com/rxdb/-/rxdb-11.6.0.tgz#07b127631a8c26e56b42aa195c4cee826b8622c4"
+  integrity sha512-WdLpwWqlDTnunilD9NarrTw89ALniE/1SrTVRe29luTQId0tWTbSQZbCUBYiatsjbxdRZp3zQRp5fiH9Re1Eag==
   dependencies:
     "@babel/runtime" "7.16.7"
     "@types/clone" "2.1.1"
