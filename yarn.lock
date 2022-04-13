@@ -8920,18 +8920,18 @@ pouchdb-adapter-http@7.2.2:
     pouchdb-fetch "7.2.2"
     pouchdb-utils "7.2.2"
 
-pouchdb-adapter-idb@7.2.2:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/pouchdb-adapter-idb/-/pouchdb-adapter-idb-7.2.2.tgz#0a4b6c6f6639f93e2e50cb20d50b5fb6eaf1e80e"
-  integrity sha512-swSVQFm/p5CPKP0zyOmtv/hFpTyjtDlPAKTpxH4gEm9V+K30kDZ8ciAHaCkGEBSfWfZFYUI8/VOnAL2L0WIIeA==
+pouchdb-adapter-idb@7.3.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/pouchdb-adapter-idb/-/pouchdb-adapter-idb-7.3.0.tgz#41939b4b3d8c6a2d1ad21df16c81a7c2e124b41d"
+  integrity sha512-qMy0lrB+LyOFyFUo7Gfr5VvSM1IXyP2c9N2XwmMSSaTib/OsNnBqLj8AWrgPEnzvEkDgImBkk34e5F6MlUFRyA==
   dependencies:
-    pouchdb-adapter-utils "7.2.2"
-    pouchdb-binary-utils "7.2.2"
-    pouchdb-collections "7.2.2"
-    pouchdb-errors "7.2.2"
-    pouchdb-json "7.2.2"
-    pouchdb-merge "7.2.2"
-    pouchdb-utils "7.2.2"
+    pouchdb-adapter-utils "7.3.0"
+    pouchdb-binary-utils "7.3.0"
+    pouchdb-collections "7.3.0"
+    pouchdb-errors "7.3.0"
+    pouchdb-json "7.3.0"
+    pouchdb-merge "7.3.0"
+    pouchdb-utils "7.3.0"
 
 pouchdb-adapter-leveldb-core@7.3.0:
   version "7.3.0"
@@ -8973,18 +8973,6 @@ pouchdb-adapter-utils@7.0.0:
     pouchdb-md5 "7.0.0"
     pouchdb-merge "7.0.0"
     pouchdb-utils "7.0.0"
-
-pouchdb-adapter-utils@7.2.2:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/pouchdb-adapter-utils/-/pouchdb-adapter-utils-7.2.2.tgz#c64426447d9044ba31517a18500d6d2d28abd47d"
-  integrity sha512-2CzZkTyTyHZkr3ePiWFMTiD5+56lnembMjaTl8ohwegM0+hYhRyJux0biAZafVxgIL4gnCUC4w2xf6WVztzKdg==
-  dependencies:
-    pouchdb-binary-utils "7.2.2"
-    pouchdb-collections "7.2.2"
-    pouchdb-errors "7.2.2"
-    pouchdb-md5 "7.2.2"
-    pouchdb-merge "7.2.2"
-    pouchdb-utils "7.2.2"
 
 pouchdb-adapter-utils@7.3.0:
   version "7.3.0"
@@ -9157,13 +9145,6 @@ pouchdb-json@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/pouchdb-json/-/pouchdb-json-7.0.0.tgz#d9860f66f27a359ac6e4b24da4f89b6909f37530"
   integrity sha512-w0bNRu/7VmmCrFWMYAm62n30wvJJUT2SokyzeTyj3hRohj4GFwTRg1mSZ+iAmxgRKOFE8nzZstLG/WAB4Ymjew==
-  dependencies:
-    vuvuzela "1.0.3"
-
-pouchdb-json@7.2.2:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/pouchdb-json/-/pouchdb-json-7.2.2.tgz#b939be24b91a7322e9a24b8880a6e21514ec5e1f"
-  integrity sha512-3b2S2ynN+aoB7aCNyDZc/4c0IAdx/ir3nsHB+/RrKE9cM3QkQYbnnE3r/RvOD1Xvr6ji/KOCBie+Pz/6sxoaug==
   dependencies:
     vuvuzela "1.0.3"
 
